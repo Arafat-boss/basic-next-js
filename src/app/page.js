@@ -10,9 +10,13 @@ export default function Home() {
     // Fetch mock blog posts
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
-      .then((data) => setPosts(data.slice(0, 10)));
+      .then((data) => setPosts(data));
   }, []);
 
+  if (posts.length === 0) {
+    return <div className="text-center mt-4">Loading...</div>;
+  }
+  // .slice(0, 10)
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6 flex justify-center items-center">Blog Viewer</h1>
