@@ -6,7 +6,7 @@ const Navbar = async () => {
   const user = await getUser();
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 px-20">
       <div className="navbar-start">
         <a className="btn btn-ghost text-xl">Next Js</a>
       </div>
@@ -23,15 +23,15 @@ const Navbar = async () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <Link href="/dashboard" className="btn btn-primary">
+            <Link href="/dashboard" className="btn bg-blue-100 hover:bg-blue-500 hover:text-white">
               Dashboard
             </Link>
-            <Link href="/api/auth/logout" className="btn">
+            <Link href="/api/auth/logout" className="btn bg-blue-100 hover:bg-blue-500 hover:text-white">
               Log out
             </Link>
           </>
         ) : (
-          <Link href="/api/auth/login" className="btn btn-secondary">
+          <Link href="/api/auth/login" className="btn bg-blue-100 hover:bg-blue-500 hover:text-white">
             Log in
           </Link>
         )}
